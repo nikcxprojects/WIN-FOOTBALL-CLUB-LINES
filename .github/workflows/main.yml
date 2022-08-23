@@ -31,11 +31,11 @@ jobs:
             files: ${{ github.workspace }}/build/Android
             dest: project_folder/${{ secrets.APP_NAME }}.zip
             
-      - uses: geekyeggo/delete-artifact@v1
-        with:
-            name: |
-                ${{ secrets.APP_NAME }}.apk
-                ${{ secrets.APP_NAME }}.aab
+      #- uses: geekyeggo/delete-artifact@v1
+        #with:
+            #name: |
+               # ${{ secrets.APP_NAME }}.apk
+               # ${{ secrets.APP_NAME }}.aab
                 
       - uses: actions/upload-artifact@v1
         with:
