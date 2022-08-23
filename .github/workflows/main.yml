@@ -100,8 +100,8 @@ jobs:
           
       - uses: actions/upload-artifact@v2
         with:
-          name: ${{ secrets.APP_NAME }}.apk
-          path: ${{ github.workspace }}/build/Android/apk
+          name: build-Android
+          path: ${{ github.workspace }}/build/Android
           
   buildAndroidAAB:
     name: Build for Android(AAB)
@@ -133,5 +133,5 @@ jobs:
           
       - uses: actions/upload-artifact@v2
         with:
-          name: ${{ secrets.APP_NAME }}.aab
-          path: ${{ github.workspace }}/build/Android/aab
+          name: build-Android
+          path: ${{ github.workspace }}/build/Android
