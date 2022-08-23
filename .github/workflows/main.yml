@@ -18,17 +18,17 @@ jobs:
       
       - uses: actions/download-artifact@v2
         with:
-             name: ${{ secrets.APP_NAME }}.apk
-             path: ${{ github.workspace }}/build/Android/apk
+             name: build-Android
+             path: ${{ github.workspace }}/build/Android
              
-      - uses: actions/download-artifact@v2
-        with:
-             name: ${{ secrets.APP_NAME }}.aab
-             path: ${{ github.workspace }}/build/Android/aab
+      #- uses: actions/download-artifact@v2
+        #with:
+             #name: ${{ secrets.APP_NAME }}.aab
+             #path: ${{ github.workspace }}/build/Android
              
       - uses: vimtor/action-zip@v1
         with:
-            files: ${{ github.workspace }}/build/Android/apk ${{ github.workspace }}/build/Android/aab
+            files: ${{ github.workspace }}/build/Android
             dest: project_folder/${{ secrets.APP_NAME }}.zip
             
       - uses: geekyeggo/delete-artifact@v1
