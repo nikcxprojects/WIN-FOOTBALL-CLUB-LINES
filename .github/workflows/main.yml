@@ -19,16 +19,16 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
              name: ${{ secrets.APP_NAME }}.apk
-             path: app/build/outputs/apk/debug/
+             path: ${{ github.workspace }}/build/Android/apk
              
       - uses: actions/download-artifact@v2
         with:
              name: ${{ secrets.APP_NAME }}.aab
-             path: app/build/outputs/bundle/release/
+             path: ${{ github.workspace }}/build/Android/aab
              
       - uses: vimtor/action-zip@v1
         with:
-            files: app/build/outputs/apk/debug/ app/build/outputs/bundle/release/
+            files: ${{ github.workspace }}/build/Android/apk ${{ github.workspace }}/build/Android/aab
             dest: project_folder/${{ secrets.APP_NAME }}.zip
             
       - uses: geekyeggo/delete-artifact@v1
@@ -101,7 +101,7 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: ${{ secrets.APP_NAME }}.apk
-          path: ${{ github.workspace }}/build/Android
+          path: ${{ github.workspace }}/build/Android/apk
           
   buildAndroidAAB:
     name: Build for Android(AAB)
@@ -134,4 +134,4 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: ${{ secrets.APP_NAME }}.aab
-          path: ${{ github.workspace }}/build/Android
+          path: ${{ github.workspace }}/build/Android/aab
