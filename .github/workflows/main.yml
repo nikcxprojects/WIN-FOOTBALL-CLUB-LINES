@@ -23,7 +23,7 @@ jobs:
              
       - uses: vimtor/action-zip@v1
         with:
-            files: ${{ github.workspace }}/build
+            files: build-Android
             dest: project_folder/${{ secrets.APP_NAME }}.zip
             
       #- uses: geekyeggo/delete-artifact@v1
@@ -96,7 +96,7 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: build-Android
-          path: ${{ github.workspace }}/build/Android
+          path: build/Android
           
   buildAndroidAAB:
     name: Build for Android(AAB)
@@ -129,4 +129,4 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: build-Android
-          path: ${{ github.workspace }}/build/Android
+          path: build/Android
