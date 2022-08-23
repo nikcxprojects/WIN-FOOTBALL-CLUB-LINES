@@ -19,7 +19,7 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
              name: build-Android
-             path: ${{ github.workspace }}/build
+             path: ${{ github.workspace }}/build/Android
              
       - uses: vimtor/action-zip@v1
         with:
